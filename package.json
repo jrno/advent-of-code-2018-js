@@ -1,0 +1,20 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "advent of code 2018 problems solved using javascript ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jrno@bitbucket.org/jrno/advent-of-code-2018-js.git"
+  },
+  "author": "Jarno Pohjonen",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jrno/advent-of-code-2018-js#readme",
+  "devDependencies": {
+    "esm": "^3.0.84",
+    "mocha": "^5.2.0"
+  }
+}
