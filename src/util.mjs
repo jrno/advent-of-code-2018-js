@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 
 /**
  * Read input from file as array of integers

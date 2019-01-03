@@ -7,37 +7,35 @@ import {readLinesAsArray} from './util';
  * 
  * @input array of strings (boxIds)
  */
-export const partOne = (input) => {
+export const partOne = input => {
+  
+  const [twos, threes] = input.reduce((acc, boxId) => {
 
-  const res = input.reduce((acc, boxId) => {
-
-    let exactlyTwoSame = false;
-    let exactlyThreeSame = false;
+    let two = false;
+    let three = false;
     
-    // find distinct chars in string and count occurences
+    // loop through distinct chars only
     new Set(boxId.split('')).forEach((c) => {
       const occurences = boxId.split(c).length - 1;
-      exactlyTwoSame = (occurences === 2) ? true : exactlyTwoSame;
-      exactlyThreeSame = (occurences === 3) ? true : exactlyThreeSame;
+      two = (occurences === 2) ? true : two;
+      three = (occurences === 3) ? true : three;
     });
 
-    return {
-      countExactTwos: (exactlyTwoSame) ? acc.countExactTwos+1 : acc.countExactTwos,
-      countExactThrees: (exactlyThreeSame) ? acc.countExactThrees+1 : acc.countExactThrees
-    }
-  }, {
-    countExactTwos: 0, 
-    countExactThrees: 0
-  });
+    return [
+      (two) ? acc[0]+1 : acc[0], 
+      (three) ? acc[1]+1 : acc[1]
+    ];
 
-  return res.countExactTwos * res.countExactThrees;
+  }, [0,0])
+
+  return twos * threes;
 }
 
 /**
  * Assuming all input strings are equal length strings, find the common characters of two 
  * strings that have only one character difference.
  */
-export const partTwo = (input) => {
+export const partTwo = input => {
   
   for (let i = 0; i < input.length; ++i) { 
     for (var d = 0; d < input.length; ++d) { 
