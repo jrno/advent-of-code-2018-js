@@ -1,17 +1,18 @@
 import assert from 'assert';
 import { partOne, partTwo } from '../src/day3';
-import { readLinesAsArray } from '../src/util.mjs';
+import { readLinesAsArray } from '../src/util';
 
+/* global describe it */
+
+// this.timeout is undefined if using es6 arrows..
 describe('Day 3', function() {
   describe('Part #1', function() {
     this.timeout(10000);
     it('Simple', () => assert.equal(4, partOne([
       '#1 @ 1,3: 4x4',
       '#2 @ 3,1: 4x4',
-      '#3 @ 5,5: 2x2'])
-      )
-    );
-    it('Solution', () => assert.equal(107820, partOne(readLinesAsArray("day3.txt"))));
+      '#3 @ 5,5: 2x2'])));
+    it('Solution', () => assert.equal(107820, partOne(readLinesAsArray('day3.txt'))));
   });
 
   describe('Part #2', function() {
@@ -19,9 +20,7 @@ describe('Day 3', function() {
     it('Simple', () => assert.equal('3', partTwo([
       '#1 @ 1,3: 4x4',
       '#2 @ 3,1: 4x4',
-      '#3 @ 5,5: 2x2'])
-      )
-    );
-    it('Solution', () => assert.equal('661', partTwo(readLinesAsArray("day3.txt"))));
+      '#3 @ 5,5: 2x2'])));
+    it('Solution', () => assert.equal('661', partTwo(readLinesAsArray('day3.txt'))));
   });
 });
