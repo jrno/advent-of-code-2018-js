@@ -144,9 +144,6 @@ export const partTwo = (input) => {
     return result;
   }, {});
 
-  // TODO: util function for running args
-  // TODO: organize day1 tests and sources to same folder? 
-
   const mostFrequentlyAsleep = Object.keys(timeAsleepByGuardWithMinutes).reduce((currentBest, id) => {
     const minute = propWithGreatestValue(timeAsleepByGuardWithMinutes[id]);
     const count = timeAsleepByGuardWithMinutes[id][minute];
